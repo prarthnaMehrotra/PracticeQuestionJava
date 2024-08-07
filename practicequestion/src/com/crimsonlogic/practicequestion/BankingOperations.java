@@ -125,37 +125,35 @@ public class BankingOperations {
 
                 default:
                     System.out.println("Invalid option. Choose another option.");
-            }
-            
+            } 
         }
     }
 
-	private void depositAmount(User user) {
-    	System.out.print("Enter deposit amount: Rs.");
-        float depositAmt = sc.nextFloat();
-        try {
-            user.deposit(depositAmt);
-            System.out.println("Deposit successful!!! \nNew balance: Rs." + user.getBalance());
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+       private void depositAmount(User user) {
+	    System.out.print("Enter deposit amount: Rs.");
+	    float depositAmt = sc.nextFloat();
+	    try {
+		user.deposit(depositAmt);
+	        System.out.println("Deposit successful!!! \nNew balance: Rs." + user.getBalance());
+	    } catch (IllegalArgumentException e) {
+	        System.out.println(e.getMessage());
+	    }
 	}   
 
-    private void withdrawAmount(User user) {
-    	System.out.print("Enter withdrawal amount: Rs.");
-        float withdrawAmt = sc.nextFloat();
-        try {
-            user.withdraw(withdrawAmt);
-            System.out.println("Withdrawal successful!!! \nNew balance: Rs." + user.getBalance());
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+	private void withdrawAmount(User user) {
+	    System.out.print("Enter withdrawal amount: Rs.");
+            float withdrawAmt = sc.nextFloat();
+            try {
+		user.withdraw(withdrawAmt);
+		System.out.println("Withdrawal successful!!! \nNew balance: Rs." + user.getBalance());
+	    } catch (IllegalArgumentException e) {
+		System.out.println(e.getMessage());
+	    }
 	}
 	
 	private void checkBalance(User user) {
-        System.out.println("Current balance: Rs." + user.getBalance());
-        System.out.println("Standard annual interest rate: " + User.getInterestRate() + "%");
-        System.out.println("Standard monthly fee: Rs." + User.getMonthlyFee());
-    }
-
+            System.out.println("Current balance: Rs." + user.getBalance());
+	    System.out.println("Standard annual interest rate: " + User.getInterestRate() + "%");
+            System.out.println("Standard monthly fee: Rs." + User.getMonthlyFee());
+	}
 }
